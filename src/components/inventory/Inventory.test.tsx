@@ -1,25 +1,35 @@
-import { render, screen } from '@testing-library/react';
-import { test, describe, expect } from 'vitest';
+import { cleanup, render, screen, waitFor, logRoles } from '@testing-library/react';
+import { test, describe, expect, afterEach } from 'vitest';
+
+import user from '@testing-library/user-event';
 import Inventory from './Inventory';
 
+
 describe('test Inventory', () => {
-  const testData = [
-    {
-      "name": 'Passport',
-      "belongs to": 'Anna',
-      "Current Location": 'Dad\'s House',
-      "Notes": "Child Passport"
-    },
-    {
-      "name": 'Umbrella',
-      "belongs to": 'David',
-      "Current Location": 'Mum\'s House',
-    }
-  ]
+  afterEach(() => cleanup());
 
   test('expect data to be there', () => {
-    render(<Inventory items={testData} />)
-    const item1 = screen.getAllByTestId('name');
-    expect(item1[0].innerText).toBe('Passport');
+    render(<Inventory />)
+    const item1 = screen.getByText('Passport');
+    expect(item1).toBeInTheDocument();
   });
+
+  test('expect new item to be in list', async () => {
+    user.setup()
+    const c = render(<Inventory />)
+
+    const nameInput = screen.getByLabelText(/name/i)
+    await user.type(nameInput, 'Banana');
+    const belongsInput = screen.getByLabelText(/Belongs to/i)
+    await user.type(belongsInput, 'David');
+    const currentInput = screen.getByLabelText(/Current Location/i)
+    await user.type(currentInput, 'North');
+    const notesInput = screen.getByLabelText(/Notes/i)
+    await user.type(notesInput, 'none');
+    const b = screen.findByText('Umbrella')
+    const submitButton = screen.getByRole('button', { name: 'Submit' });
+    await user.click(submitButton);
+    screen.debug()
+    await waitFor(() => expect(screen.findAllByText('Passport')).toBeInTheDocument())
+  })
 });

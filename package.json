@@ -14,6 +14,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.13",
+    "@testing-library/user-event": "^14.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -25,7 +26,6 @@
     "@vitejs/plugin-react": "^2.2.0",
     "@vitest/coverage-c8": "^0.25.2",
     "happy-dom": "^7.6.7",
-    "jsdom": "^20.0.2",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
     "vitest": "^0.25.1"
