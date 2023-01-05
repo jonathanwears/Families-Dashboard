@@ -1,7 +1,7 @@
 import { screen, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { describe, vi, test, expect } from 'vitest';
-import CreateNewInventoryItem from './CreateNewInventoryItem';
+import CreateNewInventoryItem from './CreateNewListItem';
 
 describe('test inventory form', () => {
 

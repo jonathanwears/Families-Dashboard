@@ -1,5 +1,5 @@
-import CreateNewInventoryItem from './components/inventory/CreateNewInventoryItem';
-import Inventory from './components/inventory/Inventory';
+import CreateNewInventoryItem from './components/tables/CreateNewListItem';
+import Inventory from './pages/mainView/Inventory';
 
 function App() {
 

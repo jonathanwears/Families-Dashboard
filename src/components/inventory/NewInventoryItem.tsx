@@ -1,6 +1,10 @@
 import TextField from '@mui/material/TextField'
-import React from 'react';
+type TextFieldProps = {
+  onChange: any,
+}
+
 function NewInventoryItem({ onChange }: any) {
+
 
   return (
     <>

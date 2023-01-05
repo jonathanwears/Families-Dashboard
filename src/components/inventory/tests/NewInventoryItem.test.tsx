@@ -33,7 +33,6 @@ describe('test input new inventory item', () => {
 
   //   const submitButton = screen.getByRole('button', { name: 'Submit' });
 
-
   //   expect(onSubmitSpy).toHaveBeenCalledWith({
   //     "Name": "Banana",
   //     "Belongs to": "David",

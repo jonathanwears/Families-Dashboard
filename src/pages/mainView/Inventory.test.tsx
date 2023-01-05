@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor, logRoles } from '@testing-library/react';
+import { cleanup, render, screen, waitFor, logRoles, act } from '@testing-library/react';
 import { test, describe, expect, afterEach } from 'vitest';
 
 import user from '@testing-library/user-event';
@@ -14,6 +14,8 @@ describe('test Inventory', () => {
     expect(item1).toBeInTheDocument();
   });
 
+  //act
+
   test('expect new item to be in list', async () => {
     user.setup()
     const c = render(<Inventory />)
@@ -28,8 +30,9 @@ describe('test Inventory', () => {
     await user.type(notesInput, 'none');
     const b = screen.findByText('Umbrella')
     const submitButton = screen.getByRole('button', { name: 'Submit' });
-    await user.click(submitButton);
-    screen.debug()
-    await waitFor(() => expect(screen.findAllByText('Passport')).toBeInTheDocument())
+
+    user.click(submitButton)
+    const d = screen.getByText(/passport/i)
+    expect(d).toBeInTheDocument()
   })
 });
