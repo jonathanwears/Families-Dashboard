@@ -1,9 +1,9 @@
-import TextField from '@mui/material/TextField'
+import TextField from '@mui/material/TextField';
 type TextFieldProps = {
-  onChange: any,
+  onChange: React.ChangeEvent<HTMLInputElement>,
 }
 
-function NewInventoryItem({ onChange }: any) {
+function NewInventoryItem({ onChange }: TextFieldProps) {
 
 
   return (

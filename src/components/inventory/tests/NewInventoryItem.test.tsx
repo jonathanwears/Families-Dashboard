@@ -1,7 +1,7 @@
 import { screen, render, fireEvent, getByRole } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { describe, test, expect, vi } from 'vitest';
-import NewInventoryItem from './NewInventoryItem';
+import NewInventoryItem from '../NewInventoryItem';
 
 describe('test input new inventory item', () => {
 

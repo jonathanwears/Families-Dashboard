@@ -1,6 +1,7 @@
-export default interface InventoryItem {
+type InventoryItemType = {
   'name': String,
-  'belongs-to': String,
-  'Current-Location': String,
-  'Notes': String,
+  'belongs to': String,
+  'current location': String,
+  'notes'?: String,
 }
+export default InventoryItemType;

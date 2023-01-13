@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-type InventoryProps = {
+type TableProps = {
   formFields: React.ComponentType,
-  setInventory: any,
+  setState: any,
 }
 
-function CreateNewListItem(props: InventoryProps) {
-  const [newItem, setNewItem] = useState({});
+function CreateNewListItem(props: TableProps) {
+  const [newItem, setNewItem] = useState();
 
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     setNewItem((prevValue: any) => ({
@@ -17,7 +17,7 @@ function CreateNewListItem(props: InventoryProps) {
 
   function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
-    props.setInventory((prevValue: any) => ([
+    props.setState((prevValue: any) => ([
       ...prevValue,
       newItem,
     ]));
@@ -27,7 +27,6 @@ function CreateNewListItem(props: InventoryProps) {
     <form onSubmit={onSubmit}>
       <props.formFields
         onChange={onChange}
-
       />
       <input type='submit' />
     </form>

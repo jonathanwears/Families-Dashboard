@@ -2,7 +2,7 @@ interface itemProps {
   item: {
     'name': String,
     'belongs to': String,
-    'current Location': String,
+    'current location': String,
     notes?: String
   }
 }
@@ -11,9 +11,9 @@ function InventoryFields({ item }: itemProps) {
 
   return (
     <li>
-      <p data-testid='name'>{item.name}</p>
+      <p>{item.name}</p>
       <p>{item['belongs to']}</p>
-      <p>{item["current Location"]}</p>
+      <p>{item["current location"]}</p>
       <p>{item.notes}</p>
     </li>
   )

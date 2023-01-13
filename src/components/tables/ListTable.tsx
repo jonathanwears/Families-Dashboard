@@ -1,12 +1,11 @@
-import { useState } from 'react';
 type propsType = {
-  data: {}[],
-  field: any,
+  data: any[],
+  field: React.ElementType,
 }
 
 function ListTable(props: propsType) {
 
-  const mappedList = props.data.map((item: any, index: number) => <props.field key={`${item.name}${index}`} item={item} />);
+  const mappedList = props.data.map((item, index) => <props.field key={`${item.name}${index}`} item={item} />);
 
   return (
     <>

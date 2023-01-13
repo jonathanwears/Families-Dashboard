@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import InventoryFields from '../../components/inventory/InventoryFields';
-import { mockInventoryData } from '../../mockInventoryData';
+import { mockInventoryData } from '../../mockData/mockInventoryData';
 import ListTable from '../../components/tables/ListTable';
 import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import NewInventoryItem from '../../components/inventory/NewInventoryItem';
+import InventoryItemType from '../../components/inventory/InventoryItem';
+import { USERS, createInventoryData } from '../../utils/faker';
 
 function Inventory() {
-  const [data, setData] = useState(mockInventoryData);
+  const [data, setData] = useState<InventoryItemType[]>([]);
   //render props
   // fowardref
+
+  useEffect(() => {
+    createInventoryData();
+    setData(USERS)
+  })
+
   return (
     <>
       <div role='inventory-list'>
@@ -17,7 +25,7 @@ function Inventory() {
           field={InventoryFields}
         />
         <CreateNewListItem
-          setInventory={setData}
+          setState={setData}
           formFields={NewInventoryItem}
         />
       </div>

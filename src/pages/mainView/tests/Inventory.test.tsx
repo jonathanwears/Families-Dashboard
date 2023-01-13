@@ -2,7 +2,7 @@ import { cleanup, render, screen, waitFor, logRoles, act } from '@testing-librar
 import { test, describe, expect, afterEach } from 'vitest';
 
 import user from '@testing-library/user-event';
-import Inventory from './Inventory';
+import Inventory from '../Inventory';
 
 
 describe('test Inventory', () => {
