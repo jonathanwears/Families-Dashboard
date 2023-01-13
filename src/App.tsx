@@ -3,7 +3,7 @@ import Inventory from './pages/mainView/Inventory';
 import Tasks from './pages/mainView/Tasks';
 function App() {
 
-  return <Tasks />
+  return <Inventory />
 }
 
 export default App

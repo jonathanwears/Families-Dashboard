@@ -1,4 +1,4 @@
-import TasksItemType from './TasksItemType';
+import TasksItemType from '../../types/TasksItemType';
 
 type FieldsProps = {
   item: TasksItemType

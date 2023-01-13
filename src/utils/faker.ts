@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker/locale/en_GB';
-import InventoryItemType from '../components/inventory/InventoryItem'
-import TasksItemType from '../components/tasks/TasksItemType';
+import InventoryItemType from '../types/InventoryItemType'
+import TasksItemType from '../types/TasksItemType';
 
 export const USERS: InventoryItemType[] = [];
 
