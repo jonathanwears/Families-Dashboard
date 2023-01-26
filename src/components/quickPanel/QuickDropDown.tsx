@@ -1,5 +1,4 @@
 import { Select, InputLabel, FormControl, MenuItem } from '@mui/material';
-import DropDownTypeOptions from './DropdownTypeOptions';
 
 type QuickDropDownTypes = {
   value: string,
@@ -24,12 +23,13 @@ function QuickDropDown({ value, handleOnChange, labelId, label, menuItems }: Qui
 
   return (
     <>
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
+      <FormControl sx={{ m: 1, minWidth: 200 }}>
         <InputLabel>{label}</InputLabel>
         <Select
           labelId={labelId}
           onChange={handleOnChange}
           value={value}
+          aria-label={label}
           label={label}
         >
           {menuItems.map(renderItems)}

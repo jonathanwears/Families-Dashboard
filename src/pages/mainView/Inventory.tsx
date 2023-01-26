@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FormControl } from '@mui/material';
 import InventoryFields from '../../components/inventory/InventoryFields';
 import ListTable from '../../components/tables/ListTable';
 import CreateNewListItem from '../../components/tables/CreateNewListItem';
@@ -23,10 +24,12 @@ function Inventory() {
           data={data}
           field={InventoryFields}
         />
-        <CreateNewListItem
-          setState={setData}
-          formFields={NewInventoryItem}
-        />
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
+          <CreateNewListItem
+            setState={setData}
+            formFields={NewInventoryItem}
+          />
+        </FormControl>
       </div>
     </>
   )

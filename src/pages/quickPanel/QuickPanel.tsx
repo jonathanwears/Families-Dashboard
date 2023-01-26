@@ -1,27 +1,104 @@
-import { SelectChangeEvent } from '@mui/material';
+import { FormControl, SelectChangeEvent } from '@mui/material';
+import { useDidMount, useDidUpdate } from 'rooks';
 import { useState } from 'react';
 import QuickDropDown from '../../components/quickPanel/QuickDropDown';
+import CreateNewListItem from '../../components/tables/CreateNewListItem';
+import QuickPanelChangeInput from './QuickPanelChangeInput';
+import { createAvailKeysList, createTypes, createNameList } from '../../utils/createData';
 
 function QuickPanel() {
-  const [store, setStore] = useState<string>('');
-  function handleOnChange(event: SelectChangeEvent) {
-    console.log("hello")
-    setStore(event.target.value)
+  const typeCatagoriesArr = ['Inventory', 'Tasks']
+  const [isMountReady, setIsMountReady] = useState(false)
+
+  //controlled inputs value
+  const [typeValue, setTypeValue] = useState<string>(typeCatagoriesArr[0]);
+  const [personValue, setPersonValue] = useState<string>('');
+  const [personInfoValue, setPersonInfoValue] = useState<string>('');
+
+  //fetched arrays data
+  const [allData, setAllData] = useState<any[]>([])
+  const [perDataArr, setPerDataArr] = useState<string[]>([])
+  const [personDropdownArr, setPersonDropdownArr] = useState<string[]>([])
+
+  /*
+  type => list of name availTypes => availKeys for name catagories
+  => action => submit
+  */
+
+  useDidMount(() => {
+    async function initialState() {
+      const availTypes = await createTypes(typeValue);
+      setAllData(availTypes);
+
+      const fakeNamesValues = createNameList(availTypes);
+      setPersonDropdownArr(fakeNamesValues);
+
+      const availKeys = createAvailKeysList(personValue, availTypes);
+      setPerDataArr(availKeys);
+
+      setIsMountReady(true);
+    }
+    initialState()
+  })
+
+  useDidUpdate(() => {
+    setIsMountReady(false);
+    async function newState() {
+      resetStates()
+      const availTypes = await createTypes(typeValue);
+      setAllData(availTypes);
+
+      const fakeNamesValues = createNameList(allData);
+      setPersonDropdownArr(fakeNamesValues);
+
+      const availKeys = createAvailKeysList(personValue, allData);
+      setPerDataArr(availKeys);
+
+      setIsMountReady(true);
+    }
+    newState()
+  }, [typeValue])
+
+  function resetStates() {
+    setPersonValue('');
+    setPersonInfoValue('');
   }
 
-  const items = ['Inventory', 'Tasks']
   return (
-    <>
-      <QuickDropDown
-        value={store}
-        handleOnChange={handleOnChange}
-        labelId='type-label'
-        label='type'
-        menuItems={items}
-      />
-    </>
+    <div className="container rounded-xl mx-auto bg-purple-100 flex justify-center items-center">
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 200, display: 'flex', flexDirection: 'row' }}>
+        <QuickDropDown
+          value={typeValue}
+          handleOnChange={(event: SelectChangeEvent) => { setTypeValue(event.target.value) }}
+          labelId='type-label'
+          label='Type'
+          menuItems={typeCatagoriesArr}
+        />
+        {isMountReady && <>
+          <QuickDropDown
+            value={personValue}
+            handleOnChange={(event: SelectChangeEvent) => { setPersonValue(event.target.value) }}
+            labelId='persob-label'
+            label='Person'
+            menuItems={personDropdownArr}
+          />
+          <QuickDropDown
+            value={personInfoValue}
+            handleOnChange={(event: SelectChangeEvent) => { setPersonInfoValue(event.target.value) }}
+            labelId='Person-Info-label'
+            label='Person Info'
+            menuItems={perDataArr}
+          />
+          <CreateNewListItem
+            styles='px-5 w-44 h-14 border bg-white border-purple-500 text-purple-900 rounded-lg hover:text-white hover:bg-purple-500 hover active:bg-violet-700 focus:ring-purple-600 focus:ring-offset-2'
+            formFields={QuickPanelChangeInput}
+            setState={() => {/*final submit to db */ }}
+          />
+        </>
+        }
+      </FormControl>
+    </div>
   )
 }
 
 export default QuickPanel;
-

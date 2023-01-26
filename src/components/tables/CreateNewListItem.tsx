@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../../ui/Button';
 
 type TableProps = {
   formFields: React.ComponentType,
@@ -24,11 +25,11 @@ function CreateNewListItem(props: TableProps) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className=' flex flex-row items-center'>
       <props.formFields
         onChange={onChange}
       />
-      <input type='submit' />
+      <Button title='Submit' onClick={() => console.log("hello")} />
     </form>
   );
 }
