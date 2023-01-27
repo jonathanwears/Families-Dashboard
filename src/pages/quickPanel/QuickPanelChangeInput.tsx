@@ -8,7 +8,7 @@ function QuickPanelChangeInput({ onChange }: TextFieldProps) {
   return <TextField
     sx={{ m: 1, minWidth: 200 }}
     id='outlined-basic'
-    label='name' name="name"
+    label='Name' name="name"
     variant='outlined'
     onChange={onChange} />
 

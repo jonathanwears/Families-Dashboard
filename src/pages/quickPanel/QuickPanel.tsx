@@ -65,8 +65,8 @@ function QuickPanel() {
   }
 
   return (
-    <div className="container rounded-xl mx-auto bg-purple-100 flex justify-center items-center">
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 200, display: 'flex', flexDirection: 'row' }}>
+    <div className="container m-1 rounded-xl mx-auto bg-purple-100 border border-purple-200 flex justify-center items-center md:flex md:flex-col">
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 200, display: 'flex', flexDirection: { lg: 'row', md: 'column' }, width: { md: '300' } }}>
         <QuickDropDown
           value={typeValue}
           handleOnChange={(event: SelectChangeEvent) => { setTypeValue(event.target.value) }}
@@ -90,14 +90,13 @@ function QuickPanel() {
             menuItems={perDataArr}
           />
           <CreateNewListItem
-            styles='px-5 w-44 h-14 border bg-white border-purple-500 text-purple-900 rounded-lg hover:text-white hover:bg-purple-500 hover active:bg-violet-700 focus:ring-purple-600 focus:ring-offset-2'
             formFields={QuickPanelChangeInput}
             setState={() => {/*final submit to db */ }}
           />
         </>
         }
       </FormControl>
-    </div>
+    </div >
   )
 }
 
