@@ -15,7 +15,7 @@ function TableRows({ item }: itemProps) {
   })
 
   return (
-    <div className='table-row even:bg-violet-50'>
+    <div className='table-row odd:bg-slate-50 even:bg-violet-50'>
       {cells}
     </div>
   )
