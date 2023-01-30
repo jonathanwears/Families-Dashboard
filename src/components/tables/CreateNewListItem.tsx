@@ -1,3 +1,4 @@
+import { FormControl } from '@mui/material';
 import React, { useState } from 'react';
 import Button from '../../ui/Button';
 
@@ -25,12 +26,17 @@ function CreateNewListItem(props: TableProps) {
   }
 
   return (
-    <form onSubmit={onSubmit} className=' flex flex-row items-center'>
-      <props.formFields
-        onChange={onChange}
-      />
+    <>
+      <FormControl
+        variant="standard"
+        onSubmit={onSubmit}
+      >
+        <props.formFields
+          onChange={onChange}
+        />
+      </FormControl >
       <Button title='Submit' onClick={() => console.log("hello")} />
-    </form>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { test, expect } from 'vitest';
-import FieldComponent from '../InventoryFields';
+import FieldComponent from '../../tables/TableRows';
 const data = {
   "name": 'Passport',
   "belongs to": 'Anna',

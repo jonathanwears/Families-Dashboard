@@ -20,11 +20,6 @@ function QuickPanel() {
   const [perDataArr, setPerDataArr] = useState<string[]>([])
   const [personDropdownArr, setPersonDropdownArr] = useState<string[]>([])
 
-  /*
-  type => list of name availTypes => availKeys for name catagories
-  => action => submit
-  */
-
   useDidMount(() => {
     async function initialState() {
       const availTypes = await createTypes(typeValue);

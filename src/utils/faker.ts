@@ -9,6 +9,7 @@ export function createInventoryData(): InventoryItemType {
     name: faker.name.firstName(),
     'belongs to': faker.name.firstName(),
     'current location': faker.address.streetAddress(),
+    'notes': faker.lorem.lines()
   }
 }
 
@@ -23,6 +24,7 @@ export function createTasksData(): TasksItemType {
     name: faker.name.firstName(),
     date: String(faker.date.soon()),
     location: faker.address.streetAddress(),
+    details: faker.lorem.lines()
   }
 }
 
