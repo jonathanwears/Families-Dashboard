@@ -6,6 +6,7 @@ import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import NewInventoryItem from '../../components/inventory/NewInventoryItem';
 import InventoryItemType from '../../types/InventoryItemType';
 import { USERS, createInventoryData } from '../../utils/faker';
+import { capitalise } from '../../components/tables/tableHelper';
 
 function Inventory() {
   const [data, setData] = useState<InventoryItemType[]>([]);
@@ -20,7 +21,8 @@ function Inventory() {
 
   useDidUpdate(() => {
     const headers = Object.keys(data[0])
-    setHeaders(headers)
+    const capHeaders = headers.map((header) => capitalise(header))
+    setHeaders(capHeaders)
   }, [data])
 
   return (
