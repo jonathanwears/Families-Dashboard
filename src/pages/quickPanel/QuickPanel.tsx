@@ -84,10 +84,14 @@ function QuickPanel() {
             label='Person Info'
             menuItems={perDataArr}
           />
-          <CreateNewListItem
+          {
+            /*
+            <CreateNewListItem
             formFields={QuickPanelChangeInput}
-            setState={() => {/*final submit to db */ }}
-          />
+            setState={() => {}}
+            />
+         */
+          }
         </>
         }
       </FormControl>

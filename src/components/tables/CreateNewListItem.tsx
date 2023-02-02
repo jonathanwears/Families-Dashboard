@@ -1,9 +1,10 @@
 import { FormControl } from '@mui/material';
+import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import Button from '../../ui/Button';
 
 type TableProps = {
-  formFields: React.ComponentType,
+  headers: string[],
   setState: any,
 }
 
@@ -25,18 +26,44 @@ function CreateNewListItem(props: TableProps) {
     ]));
   }
 
-  return (
-    <>
-      <FormControl
-        variant="standard"
-        onSubmit={onSubmit}
-      >
-        <props.formFields
+  /* 
+   <TextField
+          key={`${header}${index}`}
+          sx={{ m: 1, minWidth: 200 }}
+          id='outlined-basic'
+          label={header}
+          name={header}
+          variant='outlined'
           onChange={onChange}
         />
-      </FormControl >
-      <Button title='Submit' onClick={() => console.log("hello")} />
-    </>
+        */
+
+  const inputs = props.headers.map((header, index) => {
+    return (
+      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor={header}
+        >
+          {header}
+        </label>
+        <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-purple-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id={header}
+          type="text"
+          placeholder={header}
+          onChange={onChange}
+        />
+      </div>
+    )
+  })
+
+  return (
+    <div className='container shadow-lg opacity-70 rounded-lg my-6 py-2 px-4 bg-gray-100 w-full flex flex-row justify-items-stretch items-center'>
+      {inputs}
+      <div className='pt-2'>
+        <Button title='Submit' onClick={() => console.log("hello")} />
+      </div>
+    </div>
   );
 }
 
