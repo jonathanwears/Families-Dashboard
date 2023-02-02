@@ -10,9 +10,6 @@ function Inventory() {
   const [data, setData] = useState<InventoryItemType[]>([]);
   const [headers, setHeaders] = useState<string[]>([])
 
-  //render props
-  // fowardref
-
   useEffect(() => {
     createInventoryData();
     setData(USERS)
@@ -25,7 +22,7 @@ function Inventory() {
   }, [data])
 
   return (
-    <div role='inventory-list' className='container pt-2 h-full flex w-full flex-col  overflow-auto'>
+    <div className='container pt-2 h-full flex w-full flex-col  overflow-auto'>
       <ListTable
         data={data}
         headers={headers}

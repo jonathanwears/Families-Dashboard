@@ -12,7 +12,7 @@ function App() {
         extra div
       </div>
       <div className='col-span-5 row-span-5 flex justify-center bg-white rounded-lg'>
-        <Inventory />
+        <Tasks />
       </div>
       <div className='col-span-5 row-span-1'>
         < QuickPanel />
