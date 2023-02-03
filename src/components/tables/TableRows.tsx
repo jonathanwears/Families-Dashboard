@@ -8,7 +8,7 @@ function TableRows({ item }: itemProps) {
 
   const cells = keys.map((key, index) => {
     return (
-      <div className='table-cell text-sm p-2 h-[80px] text-left max-w-xs first:pl-2 last:pr-2'
+      <div className='table-cell text-xs p-2 h-[80px] text-left max-w-xs first:pl-2 last:pr-2'
         key={`${key}${index}`}
       >
         {item[key]}

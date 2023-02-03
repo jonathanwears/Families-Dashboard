@@ -38,7 +38,7 @@ function CreateNewListItem(props: TableProps) {
         />
         */
 
-  const inputs = props.headers.map((header, index) => {
+  const inputs = props.headers.map((header) => {
     return (
       <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label
@@ -58,12 +58,12 @@ function CreateNewListItem(props: TableProps) {
   })
 
   return (
-    <div className='container shadow-lg opacity-70 rounded-lg my-6 py-2 px-4 bg-gray-100 w-full flex flex-row justify-items-stretch items-center'>
+    <>
       {inputs}
       <div className='pt-2'>
         <Button title='Submit' onClick={() => console.log("hello")} />
       </div>
-    </div>
+    </>
   );
 }
 

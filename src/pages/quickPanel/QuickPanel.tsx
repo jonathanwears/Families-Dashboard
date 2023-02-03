@@ -5,6 +5,7 @@ import QuickDropDown from '../../components/quickPanel/QuickDropDown';
 import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import QuickPanelChangeInput from './QuickPanelChangeInput';
 import { createAvailKeysList, createTypes, createNameList } from '../../utils/createData';
+import Button from '../../ui/Button';
 
 function QuickPanel() {
   const typeCatagoriesArr = ['Inventory', 'Tasks']
@@ -60,8 +61,10 @@ function QuickPanel() {
   }
 
   return (
-    <div className="container m-1 rounded-xl mx-auto bg-purple-100 border border-purple-200 flex justify-center items-center md:flex md:flex-col">
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 200, display: 'flex', flexDirection: { lg: 'row', md: 'column' }, width: { md: '300' } }}>
+    <div className="container shadow-xl flex flex-col rounded-md w-full h-full border bg-white border-purple-200 ">
+      <h1 className='text-4xl  font-sans subpixel-antialiased font-normal pl-4 pt-4 bg-white rounded-sm' >Quick Actions</h1>
+      <div className='border-2 border-purple-100 mt-2' />
+      <form className='container h-full w-full flex flex-row items-center'>
         <QuickDropDown
           value={typeValue}
           handleOnChange={(event: SelectChangeEvent) => { setTypeValue(event.target.value) }}
@@ -73,7 +76,7 @@ function QuickPanel() {
           <QuickDropDown
             value={personValue}
             handleOnChange={(event: SelectChangeEvent) => { setPersonValue(event.target.value) }}
-            labelId='persob-label'
+            labelId='person-label'
             label='Person'
             menuItems={personDropdownArr}
           />
@@ -84,17 +87,21 @@ function QuickPanel() {
             label='Person Info'
             menuItems={perDataArr}
           />
-          {
-            /*
-            <CreateNewListItem
-            formFields={QuickPanelChangeInput}
-            setState={() => {}}
-            />
-         */
-          }
+          <div className='w-full mt-0 d:w-1/2 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
+            <label
+              className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+              htmlFor='new-value'
+            >
+              New Value
+            </label>
+            <input placeholder='New Value' className='appearance-none block bg-gray-100 text-gray-700 border border-purple-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-purple-500 focus:border-purple-500 w-full p-2.5 d' />
+          </div>
+          <div className='pt-2'>
+            <Button title='Submit' onClick={() => console.log('hello')} />
+          </div>
         </>
         }
-      </FormControl>
+      </form>
     </div >
   )
 }

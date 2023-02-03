@@ -26,12 +26,12 @@ function ListTable(props: propsType) {
   ));
 
   return (
-    <div className='relative overflow-x-auto shadow-lg rounded-md w-full'>
-      <div className=' table border-collapse w-full'>
+    <div className='mx-4 mb-4 shadow-lg rounded-md overflow-y-scroll'>
+      <div className='table w-full'>
         <div className='table-header-group'>
           {headers}
         </div>
-        <div className='table-row-group'>
+        <div className='table-row-group border-collapse'>
           {rows}
         </div>
       </div>
