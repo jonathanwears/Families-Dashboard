@@ -1,4 +1,3 @@
-import { Select, InputLabel, FormControl, MenuItem } from '@mui/material';
 
 type QuickDropDownTypes = {
   value: string,

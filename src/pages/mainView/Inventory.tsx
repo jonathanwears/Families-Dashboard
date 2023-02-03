@@ -5,6 +5,7 @@ import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import InventoryItemType from '../../types/InventoryItemType';
 import { USERS, createInventoryData } from '../../utils/faker';
 import { capitalise } from '../../components/tables/tableHelper';
+import Title from '../../ui/Title';
 
 function Inventory() {
   const [data, setData] = useState<InventoryItemType[]>([]);
@@ -23,6 +24,8 @@ function Inventory() {
 
   return (
     <div className='container pt-2 h-full flex w-full flex-col  overflow-auto'>
+      <Title>Inventory</Title>
+      <div className='border-2 border-purple-200 mb-2'></div>
       <ListTable
         data={data}
         headers={headers}

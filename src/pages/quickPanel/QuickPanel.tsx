@@ -2,9 +2,8 @@ import { FormControl, SelectChangeEvent } from '@mui/material';
 import { useDidMount, useDidUpdate } from 'rooks';
 import { useState } from 'react';
 import QuickDropDown from '../../components/quickPanel/QuickDropDown';
-import CreateNewListItem from '../../components/tables/CreateNewListItem';
-import QuickPanelChangeInput from './QuickPanelChangeInput';
 import { createAvailKeysList, createTypes, createNameList } from '../../utils/createData';
+import Title from '../../ui/Title';
 import Button from '../../ui/Button';
 
 function QuickPanel() {
@@ -62,7 +61,7 @@ function QuickPanel() {
 
   return (
     <div className="container shadow-xl flex flex-col rounded-md w-full h-full border bg-white border-purple-200 ">
-      <h1 className='text-4xl  font-sans subpixel-antialiased font-normal pl-4 pt-4 bg-white rounded-sm' >Quick Actions</h1>
+      <Title>Quick Actions</Title>
       <div className='border-2 border-purple-100 mt-2' />
       <form className='container h-full w-full flex flex-row items-center'>
         <QuickDropDown
