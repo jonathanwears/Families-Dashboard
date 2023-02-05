@@ -5,7 +5,7 @@ import UserIcon from '../../icons/UserIcon';
 
 function Navigation() {
   return (
-    <div className='flex flex-col bg-neutral-50 h-full border-r-2 border-purple-200 p-2 divide-y'>
+    <div className='flex flex-col h-full border-r-2 bg-slate-100 border-purple-200 p-2 divide-y'>
       <h1 className='text-4xl text-stone-700 tracking-tight font-sans subpixel-antialiased  pt-4 bg-white rounded-sm'>Families</h1>
       <div className='flex flex-row'><span className='p-2'>{<UserIcon />}</span>User</div>
       <div className='flex flex-col divide-y'>

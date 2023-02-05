@@ -26,7 +26,7 @@ function ListTable(props: propsType) {
   ));
 
   return (
-    <div className='mx-4 mb-4 shadow-lg rounded-md overflow-y-scroll'>
+    <div className=' m-1 shadow-lg rounded-md overflow-y-scroll'>
       <div className='table w-full'>
         <div className='table-header-group'>
           {headers}

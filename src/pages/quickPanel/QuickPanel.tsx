@@ -60,7 +60,7 @@ function QuickPanel() {
   }
 
   return (
-    <div className="container shadow-xl flex flex-col rounded-md w-full h-full border bg-white border-purple-200 ">
+    <div className="flex flex-col w-full h-full">
       <Title>Quick Actions</Title>
       <div className='border-2 border-purple-100 mt-2' />
       <form className='container h-full w-full flex flex-row items-center'>
@@ -86,7 +86,7 @@ function QuickPanel() {
             label='Person Info'
             menuItems={perDataArr}
           />
-          <div className='w-full mt-0 d:w-1/2 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
+          <div className='w-full mt-0 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
             <label
               className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
               htmlFor='new-value'
@@ -101,7 +101,7 @@ function QuickPanel() {
         </>
         }
       </form>
-    </div >
+    </div>
   )
 }
 
