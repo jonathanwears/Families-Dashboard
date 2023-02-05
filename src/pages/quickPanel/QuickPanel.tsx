@@ -88,7 +88,7 @@ function QuickPanel() {
           />
           <div className='w-full mt-0 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
             <label
-              className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+              className='block uppercase tracking-wide text-xs font-bold mb-2'
               htmlFor='new-value'
             >
               New Value
