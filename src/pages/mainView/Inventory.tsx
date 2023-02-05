@@ -30,7 +30,7 @@ function Inventory() {
         data={data}
         headers={headers}
       />
-      <div className='container shadow-lg opacity-70 rounded-lg my-6 py-2 px-4 bg-gray-100 w-full flex flex-row justify-items-stretch items-center'>
+      <div className='container my-2 pt-2 px-2 w-full flex flex-row justify-items-stretch items-center'>
         <CreateNewListItem
           setState={setData}
           headers={headers}

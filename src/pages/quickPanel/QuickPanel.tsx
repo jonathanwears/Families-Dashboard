@@ -63,7 +63,7 @@ function QuickPanel() {
     <div className="flex flex-col w-full h-full">
       <Title>Quick Actions</Title>
       <div className='border-2 border-purple-100 mt-2' />
-      <form className='container h-full w-full flex flex-row items-center'>
+      <form className='container pt-2 px-2 h-full w-full flex flex-row items-center'>
         <QuickDropDown
           value={typeValue}
           handleOnChange={(event: SelectChangeEvent) => { setTypeValue(event.target.value) }}
