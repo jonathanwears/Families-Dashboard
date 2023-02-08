@@ -8,7 +8,7 @@ function TableRows({ item }: itemProps) {
 
   const cells = keys.map((key, index) => {
     return (
-      <div className='table-cell text-xs p-2 h-[80px] text-left max-w-xs first:pl-2 last:pr-2'
+      <div className='table-cell  text-xs p-2 h-[80px] text-left max-w-xs first:pl-2 last:pr-2'
         key={`${key}${index}`}
       >
         {item[key]}
@@ -17,7 +17,7 @@ function TableRows({ item }: itemProps) {
   })
 
   return (
-    <div className='table-row  hover:bg-slate-100 odd:bg-slate-50 even:bg-violet-50'>
+    <div className='table-row  hover:bg-slate-100 dark:text-slate-100 dark:odd:bg-slate-500 dark:even:bg-slate-400 odd:bg-slate-50 even:bg-violet-50 '>
       {cells}
     </div>
   )

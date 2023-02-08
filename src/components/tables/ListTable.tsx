@@ -10,7 +10,7 @@ function ListTable(props: propsType) {
   const headers = props.headers.map((title, index) => {
     return (
       <div
-        className='table-cell text-white text-left bg-purple-400 text-xl  p-4 pl-0 first:pl-2 last:pr-2'
+        className='table-cell text-white text-left bg-purple-400 dark:bg-purple-600 text-xl  p-4 pl-0 first:pl-2 last:pr-2'
         key={`${title}${index}`}
       >
         {title}
