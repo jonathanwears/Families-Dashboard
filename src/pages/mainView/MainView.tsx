@@ -5,7 +5,7 @@ import Tasks from '../mainView/Tasks';
 function MainView() {
 
   return (
-    <div className='flex flex-col border-2 shadow-xl rounded-sm w-full h-full border-purple-200 bg-slate-100 '>
+    <div className='flex flex-col border-2 shadow-xl rounded-md w-full h-full border-purple-200 bg-slate-100  dark:border-slate-800  dark:bg-slate-800'>
       <Routes>
         <Route index path="/tasks" element={<Tasks />} />
         <Route path="/inventory" index element={<Inventory />} />

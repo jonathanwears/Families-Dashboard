@@ -6,7 +6,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='grid grid-cols-5 grid-rows-5 grid-flow-col m-auto bg-indigo-50 h-screen w-screen'>
+      <div className='grid grid-cols-5 grid-rows-5 grid-flow-col m-auto bg-indigo-50 dark:bg-slate-700 h-screen w-screen'>
         <div className='col-span-1 row-span-6'>
           <Navigation />
         </div>

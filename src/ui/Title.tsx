@@ -5,7 +5,7 @@ type propTypes = {
 function Title(props: propTypes) {
 
   return (
-    <h1 className='text-4xl tracking-tight text-stone-700 font-sans subpixel-antialiased font-normal pl-4 pt-4 rounded-sm'>
+    <h1 className='text-4xl tracking-tight dark:text-slate-200 text-stone-700 font-sans subpixel-antialiased font-normal pl-4 pt-4 rounded-sm'>
       {props.children}
     </h1>
   );

@@ -21,15 +21,15 @@ function QuickDropDown({ value, handleOnChange, label, menuItems }: QuickDropDow
   }
 
   return (
-    <div className='w-full mt-0 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
+    <div className='w-full mt-0 px-3 mb-6 md:mb-0 container rounded-lg my-6 py-2 '>
       <label
-        className='block uppercase tracking-wide  text-xs font-bold mb-2'
+        className='block uppercase tracking-wide dark:text-slate-400 text-xs font-bold mb-2'
         htmlFor={label}
       >
         {label}
       </label>
       <select
-        className='appearance-none block bg-gray-100 text-gray-700 border border-purple-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-purple-500 focus:border-purple-500 w-full p-2.5 d'
+        className='appearance-none block bg-gray-100 dark:text-slate-200 dark:bg-gray-700 text-gray-700 border border-purple-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none dark:focus:bg-slate-900 focus:bg-white focus:ring-purple-500 focus:border-purple-500 w-full p-2.5 d'
         id={label}
         onChange={handleOnChange}
         value={value}

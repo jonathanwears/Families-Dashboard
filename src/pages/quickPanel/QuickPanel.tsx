@@ -86,14 +86,14 @@ function QuickPanel() {
             label='Person Info'
             menuItems={perDataArr}
           />
-          <div className='w-full mt-0 px-3 mb-6 md:mb-0 container opacity-70 rounded-lg my-6 py-2 '>
+          <div className='w-full mt-0 px-3 mb-6 md:mb-0 container rounded-lg my-6 py-2 '>
             <label
-              className='block uppercase tracking-wide text-xs font-bold mb-2'
+              className='block uppercase tracking-wide text-xs dark:text-slate-400 font-bold mb-2'
               htmlFor='new-value'
             >
               New Value
             </label>
-            <input placeholder='New Value' className='appearance-none block bg-gray-100 text-gray-700 border border-purple-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-purple-500 focus:border-purple-500 w-full p-2.5 d' />
+            <input placeholder='New Value' className='appearance-none block bg-gray-100  dark:text-slate-100 dark:focus:bg-slate-900 dark:bg-gray-700 text-gray-700  border border-purple-500  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-purple-500 focus:border-purple-500 w-full p-2.5 d' />
           </div>
           <div className='pt-2'>
             <Button title='Submit' onClick={() => console.log('hello')} />

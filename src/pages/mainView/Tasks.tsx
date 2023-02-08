@@ -25,7 +25,7 @@ function Tasks() {
   return (
     <div className='container h-full flex w-full flex-col'>
       <Title>Tasks</Title>
-      <div className='mt-2 border-2 border-purple-100' />
+      <div className='mt-2 border-2 border-purple-100 dark:border-slate-200' />
       <ListTable
         data={data}
         headers={headers}

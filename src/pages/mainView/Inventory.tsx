@@ -25,7 +25,7 @@ function Inventory() {
   return (
     <div className='container h-full flex w-full flex-col overflow-auto'>
       <Title>Inventory</Title>
-      <div className='border-2 border-purple-100 mt-2'></div>
+      <div className='border-2 border-purple-100 dark:border-slate-200 mt-2'></div>
       <ListTable
         data={data}
         headers={headers}
