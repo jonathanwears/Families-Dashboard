@@ -6,6 +6,7 @@ import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import TasksItemType from '../../types/TasksItemType';
 import { TASKS, createTasksData } from '../../utils/faker';
 import Title from '../../ui/Title';
+import { motion } from 'framer-motion';
 
 function Tasks() {
   const [data, setData] = useState<TasksItemType[]>([])
@@ -23,7 +24,16 @@ function Tasks() {
   }, [data])
 
   return (
-    <div className='container h-full flex w-full flex-col'>
+    <motion.div
+      className='container h-full flex w-full flex-col'
+      initial={{ opacity: 0, scale: .9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+
+    >
       <Title>Tasks</Title>
       <div className='mt-2 border-2 border-purple-100 dark:border-slate-200' />
       <ListTable
@@ -36,7 +46,7 @@ function Tasks() {
           setState={setData}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

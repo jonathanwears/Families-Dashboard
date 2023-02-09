@@ -6,6 +6,7 @@ import InventoryItemType from '../../types/InventoryItemType';
 import { USERS, createInventoryData } from '../../utils/faker';
 import { capitalise } from '../../components/tables/tableHelper';
 import Title from '../../ui/Title';
+import { motion } from 'framer-motion';
 
 function Inventory() {
   const [data, setData] = useState<InventoryItemType[]>([]);
@@ -23,7 +24,15 @@ function Inventory() {
   }, [data])
 
   return (
-    <div className='container h-full flex w-full flex-col overflow-auto'>
+    <motion.div
+      className='container h-full flex w-full flex-col overflow-auto'
+      initial={{ opacity: 0, scale: .9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+    >
       <Title>Inventory</Title>
       <div className='border-2 border-purple-100 dark:border-slate-200 mt-2'></div>
       <ListTable
@@ -36,7 +45,7 @@ function Inventory() {
           headers={headers}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
