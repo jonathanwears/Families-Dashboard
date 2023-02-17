@@ -1,10 +1,8 @@
-
 import getTypeData from './getTypeData';
 
 export function createAvailKeysList(personValue: string, availTypes: []) {
 
   const personIndex = availTypes.findIndex(obj => obj.name === personValue)
-  console.log(personIndex)
   const personObj = availTypes.at(personIndex)
   const personKeys = Object.keys(personObj)
   return personKeys
