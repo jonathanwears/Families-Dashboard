@@ -1,4 +1,4 @@
-import TaskIcon from '../../icons/task';
+import TaskIcon from '../../icons/taskIcon';
 import InventoryIcon from '../../icons/InventoryIcon';
 import NavLink from './NavLink';
 
