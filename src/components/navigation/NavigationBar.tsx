@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import TaskIcon from '../../icons/task';
 import InventoryIcon from '../../icons/InventoryIcon';
 import NavLink from './NavLink';

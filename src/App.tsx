@@ -2,8 +2,8 @@ import { BrowserRouter } from "react-router-dom";
 import Navigation from './pages/navigation/Navigation';
 import MainView from './pages/mainView/MainView';
 import QuickView from './pages/QuickView';
-function App() {
 
+function App() {
   return (
     <BrowserRouter>
       <div className='grid grid-cols-5 grid-rows-5 grid-flow-col m-auto bg-indigo-50 dark:bg-slate-700 h-screen w-screen'>
@@ -21,7 +21,7 @@ function App() {
           </div>
         </div>
       </div>
-    </BrowserRouter>
+    </BrowserRouter >
   )
 }
 
