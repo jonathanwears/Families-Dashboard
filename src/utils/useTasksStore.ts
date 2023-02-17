@@ -11,8 +11,8 @@ createTasksData()
 const useTasksStore = create<TasksState>((set) => ({
   tasks: [
     ...TASKS
-
   ],
+
   addLine: (newLine) => set(({ tasks }) => ({
     tasks: [
       ...tasks,
