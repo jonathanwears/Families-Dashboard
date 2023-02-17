@@ -1,34 +1,28 @@
-import { FormControl } from '@mui/material';
-import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import Button from '../../ui/Button';
 
 type TableProps = {
   headers: string[],
-  setState: any,
+  setState: (value: any) => void,
 }
 
 function CreateNewListItem(props: TableProps) {
   const [newItem, setNewItem] = useState();
 
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const key = event.target.name.toLowerCase();
     setNewItem((prevValue: any) => ({
       ...prevValue,
-      [event.target.name]: event.target.value,
+      [key]: event.target.value,
     }))
-  }
-
-  function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault();
-    props.setState((prevValue: any) => ([
-      ...prevValue,
-      newItem,
-    ]));
   }
 
   const inputs = props.headers.map((header) => {
     return (
-      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <div
+        key={header}
+        className="w-full md:w-1/2 px-3 mb-6 md:mb-0"
+      >
         <label
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-slate-400 "
           htmlFor={header}
@@ -40,6 +34,7 @@ function CreateNewListItem(props: TableProps) {
           type="text"
           placeholder={header}
           onChange={onChange}
+          name={header}
         />
       </div>
     )
@@ -49,7 +44,7 @@ function CreateNewListItem(props: TableProps) {
     <>
       {inputs}
       <div className='pt-2'>
-        <Button title='Submit' onClick={() => console.log("hello")} />
+        <Button title='Submit' onClick={() => props.setState(newItem)} />
       </div>
     </>
   );
