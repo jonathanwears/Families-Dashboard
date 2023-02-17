@@ -3,19 +3,19 @@ import { useDidUpdate } from 'rooks';
 import ListTable from '../../components/tables/ListTable';
 import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import InventoryItemType from '../../types/InventoryItemType';
-import { USERS, createInventoryData } from '../../utils/faker';
 import { capitalise } from '../../components/tables/tableHelper';
 import Title from '../../ui/Title';
 import { motion } from 'framer-motion';
+import useInventoryStore from '../../utils/useInventoryStore';
 
 function Inventory() {
+  const inventory = useInventoryStore((state) => state.inventory);
   const [data, setData] = useState<InventoryItemType[]>([]);
   const [headers, setHeaders] = useState<string[]>([])
 
   useEffect(() => {
-    createInventoryData();
-    setData(USERS)
-  }, [])
+    setData(inventory)
+  }, [data])
 
   useDidUpdate(() => {
     const headers = Object.keys(data[0])
@@ -41,8 +41,8 @@ function Inventory() {
       />
       <div className='container my-2 pt-2 px-2 w-full flex flex-row justify-items-stretch items-center'>
         <CreateNewListItem
-          setState={setData}
           headers={headers}
+          setState={setData}
         />
       </div>
     </motion.div>

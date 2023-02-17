@@ -4,18 +4,19 @@ import ListTable from '../../components/tables/ListTable';
 import { capitalise } from '../../components/tables/tableHelper';
 import CreateNewListItem from '../../components/tables/CreateNewListItem';
 import TasksItemType from '../../types/TasksItemType';
-import { TASKS, createTasksData } from '../../utils/faker';
 import Title from '../../ui/Title';
 import { motion } from 'framer-motion';
+import useTasksStore from '../../utils/useTasksStore';
 
 function Tasks() {
+  const tasks = useTasksStore((state) => state.tasks)
+  const setTasks = useTasksStore((state) => state.addLine)
   const [data, setData] = useState<TasksItemType[]>([])
   const [headers, setHeaders] = useState<string[]>([])
 
   useEffect(() => {
-    createTasksData();
-    setData(TASKS);
-  }, [])
+    setData(tasks);
+  }, [tasks])
 
   useDidUpdate(() => {
     const headers = Object.keys(data[0])
@@ -43,7 +44,7 @@ function Tasks() {
       <div className='container my-2 pt-2 px-2 w-full flex flex-row justify-items-stretch items-center'>
         <CreateNewListItem
           headers={headers}
-          setState={setData}
+          setState={setTasks}
         />
       </div>
     </motion.div>
