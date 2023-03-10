@@ -40,6 +40,7 @@ Project is created with:
 ## Screenshots
 
 ![Light View](./readme/light-example.png)
+
 ![dark View](./readme/dark-example.png)
 
 ## Setup
@@ -66,7 +67,7 @@ Project is: _in progress_
 
 #### To Do:
 
-- Improve Types and type erros
+- Improve Types and type errors
 - refactor
 
 ## Contact
