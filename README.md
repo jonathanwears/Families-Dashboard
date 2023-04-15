@@ -29,6 +29,7 @@ Project is created with:
 - Vite 3.2
 - Tailwind 3.2
 - Vitest 0.25
+- React Router 6.8
 
 ## Features
 
